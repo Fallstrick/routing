@@ -7,7 +7,12 @@ class Put extends RequestMapping {
   @override
   final String path;
 
-  const Put({this.path}) : super(path: path, method: 'PUT');
+  /// response headers
+  @override
+  final Map<String,String> responseHeaders;
+
+  const Put({this.path, this.responseHeaders})
+      : super(path: path, method: 'PUT', responseHeaders: responseHeaders);
 
   @override
   String toString() => 'Put';

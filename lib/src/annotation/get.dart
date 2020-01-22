@@ -7,7 +7,12 @@ class Get extends RequestMapping {
   @override
   final String path;
 
-  const Get({this.path}) : super(path: path, method: 'GET');
+  /// response headers
+  @override
+  final Map<String,String> responseHeaders;
+
+  const Get({this.path, this.responseHeaders})
+      : super(path: path, method: 'GET', responseHeaders: responseHeaders);
 
   @override
   String toString() => 'Get';
