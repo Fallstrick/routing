@@ -7,7 +7,12 @@ class Post extends RequestMapping {
   @override
   final String path;
 
-  const Post({this.path}) : super(path: path, method: 'POST');
+  /// response headers
+  @override
+  final Map<String,String> responseHeaders;
+
+  const Post({this.path, this.responseHeaders})
+      : super(path: path, method: 'POST', responseHeaders: responseHeaders);
 
   @override
   String toString() => 'Post';

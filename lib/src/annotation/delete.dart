@@ -7,7 +7,12 @@ class Delete extends RequestMapping {
   @override
   final String path;
 
-  const Delete({this.path}) : super(path: path, method: 'DELETE');
+  /// response headers
+  @override
+  final Map<String,String> responseHeaders;
+
+  const Delete( {this.path,this.responseHeaders})
+      : super(path: path, method: 'DELETE', responseHeaders: responseHeaders);
 
   @override
   String toString() => 'Delete';
